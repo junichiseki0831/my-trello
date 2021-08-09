@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-     <board />
+    <!-- Boardコンポーネントをレンダリング -->
+    <board />
   </div>
 </template>
 
 <script>
+//コンポーネントをインポート
 import Board from './components/Board.vue'
 
 export default {
   name: 'app',
   components: {
+    //コンポーネント登録
     Board
   }
 }
