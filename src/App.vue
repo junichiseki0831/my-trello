@@ -7,13 +7,13 @@
 
 <script>
 //コンポーネントをインポート
-import Board from './components/Board.vue'
+import Board from "./components/Board.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     //コンポーネント登録
     Board
   }
-}
+};
 </script>

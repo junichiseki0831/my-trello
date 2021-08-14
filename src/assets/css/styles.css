@@ -82,6 +82,7 @@ main {
   cursor: pointer;
 }
 
+/* フォームにフォーカスした場合 */
 .active .text-input {
   background-color: #fff;
 }
