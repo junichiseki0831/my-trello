@@ -1,4 +1,5 @@
 <template>
+  <!-- .preventはVueのイベント修飾詞、サブミット時にリロードされるのを防ぐ -->
   <form class="addlist" @submit.prevent="addList">
     <input v-model="title"
            type="text"
