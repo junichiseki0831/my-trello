@@ -20,7 +20,7 @@
      }
    },
    methods: {
-     AddList() {
+     addList() {
        this.$store.dispatch('addlist', {title: this.title})
        this.title = ''
      },
