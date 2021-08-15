@@ -97,11 +97,12 @@ main {
   background-color: #00d78f;
 }
 
+/* リスト全体 */
 .list {
   margin: 0 5px auto;
   position: relative;
   display: inline-block;
-  flex-direction: column;
+  flex-direction: column; /*追加されるListは垂直表示*/
   align-items: flex-start;
   min-width: 290px;
   width: 290px;
@@ -113,12 +114,14 @@ main {
   vertical-align: top;
 }
 
+/* リストのヘッダー文字 */
 .listheader {
   width: 290px;
   display: inline-flex;
   justify-content: space-between;
 }
 
+/* タイトルと削除ボタン */
 .list-title {
   font-size: 20px;
   font-weight: bold;
@@ -130,6 +133,7 @@ main {
   padding: 15px;
 }
 
+/* 削除ボタン */
 .deletelist {
   position: absolute;
   top: 6px;
