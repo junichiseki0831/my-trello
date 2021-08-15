@@ -1,6 +1,6 @@
 <template>
   <!-- .preventはVueのイベント修飾詞、サブミット時にリロードされるのを防ぐ -->
-	<form :class="classList" @submit.prevent="addList">
+  <form :class="classList" @submit.prevent="addList">
     <input
       v-model="title"
       type="text"
@@ -9,7 +9,7 @@
       @focusin="startEditing"
       @focusout="finishEditing"
     />
-    <button type="submit" class="add-button">Add</button>
+    <button type="submit" class="add-button" v-if="isEditing || titleExists">Add</button>
   </form>
 </template>
 
@@ -27,7 +27,14 @@ export default {
       if (this.isEditing) {
         classList.push("active");
       }
+
+      if (this.titleExists) {
+        classList.push("addable");
+      }
       return classList;
+    },
+    titleExists() {
+      return this.title.length > 0;
     }
   },
   methods: {
