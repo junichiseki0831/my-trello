@@ -140,3 +140,8 @@ main {
   right: 14px;
   font-size: 28px;
 }
+
+.deletelist:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
