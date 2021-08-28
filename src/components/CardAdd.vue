@@ -35,6 +35,7 @@ export default {
       return classList
     },
     bodyExists() {
+      //入力文字の文字数でtrueかfalseを返す
       return this.body.length > 0
     },
   },
