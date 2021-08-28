@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <button class="close-button" @click="removeCardFormList">
+    <button class="close-button" @click="removeCardFromList">
       x
     </button>
     <div class="body">
