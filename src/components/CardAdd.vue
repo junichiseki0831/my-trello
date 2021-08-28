@@ -1,7 +1,8 @@
 <template>
   <form :class="classList" @submit.prevent="addCardToList">
     <input v-model="body" type="text" class="text-input" placeholder="Add new card" @focus="startEditing" @focusout="finishEditing">
-    <button type="submit" class="add-button">
+    <!-- v-if="isEditing || bodyExists"はフォームが活性時かつテキストが入力された時 -->
+    <button type="submit" class="add-button" v-if="isEditing || bodyExists">
       Add
     </button>
   </form>
@@ -28,7 +29,13 @@ export default {
       if (this.isEditing) {
         classList.push('active')
       }
+      if(this.bodyExists) {
+        classList.push('addable')
+      }
       return classList
+    },
+    bodyExists() {
+      return this.body.length > 0
     },
   },
   methods: {
