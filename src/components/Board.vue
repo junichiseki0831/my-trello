@@ -9,6 +9,7 @@
               :title="item.title"
               :cards="item.cards"
               :listIndex="index"
+              @change="movingCard"
         />  
         <list-add />
       </div>
@@ -18,8 +19,8 @@
 
 <script>
 import ListAdd from "./ListAdd.vue";
-import List from './List'
-import { mapState } from 'vuex'
+import List from './List';
+import { mapState } from 'vuex';
 
 export default {
   components: {
@@ -34,5 +35,10 @@ export default {
       return this.$store.getters.totalCardCount
     }
   },
-};
+  methods: {
+    movingCard: function() {
+      this.$store.dispatch('updateList', { lists: this.lists })
+    },
+  }
+}
 </script>

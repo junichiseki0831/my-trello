@@ -10,7 +10,7 @@ const store = new Vuex.Store({
   state: {
     //localStorageに保存されたリストがあれば取得、なければデフォルトのリスト配列を設置
     //localStorageにはJSON形式の文字列型でデータが保存されている、取得するときにはJSON.parse(取得するデータ)でオブジェクトに変換する必要
-    lists: savedLists ? JSON.parse(savedLists) : [
+    lists: savedLists ? JSON.parse(savedLists): [
       {
         title: 'Backlog',
         cards: [
@@ -43,6 +43,9 @@ const store = new Vuex.Store({
     removeCardFromList(state, payload) {
       state.lists[payload.listIndex].cards.splice(payload.cardIndex, 1)
     },
+    updateList(state, payload) {
+      state.lists = payload.lists
+    }
   },
   actions: {
     addlist(context, payload) {
@@ -57,6 +60,9 @@ const store = new Vuex.Store({
     removeCardFromList(context, payload) {
       context.commit('removeCardFromList', payload)
     },
+    updateList(context, payload) {
+      context.commit('updateList', payload)
+    }
   },
   getters: {
     totalCardCount(state) {
